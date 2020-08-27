@@ -4,17 +4,17 @@
 
 	<div class="row clearfix page_header">
 		<div class="col-md-6">
-			<h2> Users </h2>		
+			<h2> Categories </h2>		
 		</div>
 		<div class="col-md-6 text-right">
-			<a class="btn btn-info" href="{{ url('users/create') }}"> <i class="fa fa-plus"></i> New user </a>
+			<a class="btn btn-info" href="{{ route('categories.create') }}"> <i class="fa fa-plus"></i> New Category </a>
 		</div>
 	</div>
 
 	<!-- DataTales Example -->
 	  <div class="card shadow mb-4">
 	    <div class="card-header py-3">
-	      <h6 class="m-0 font-weight-bold text-primary">Users</h6>
+	      <h6 class="m-0 font-weight-bold text-primary">Categories</h6>
 	    </div>
 	    <div class="card-body">
 	      <div class="table-responsive">
@@ -22,41 +22,26 @@
 	          <thead>
 	            <tr>
 	              <th>ID</th>
-	              <th>Group</th>
-	              <th>Name</th>
-	              <th>Email</th>
-	              <th>Phone</th>
-	              <th>Address</th>
+	              <th>Title</th>
 	              <th class="text-right">Actions</th>
 	            </tr>
 	          </thead>
 	          <tfoot>
 	            <tr>
 	              <th>ID</th>
-	              <th>Group</th>
-	              <th>Name</th>
-	              <th>Email</th>
-	              <th>Phone</th>
-	              <th>Address</th>
+	              <th>Title</th>
 	              <th class="text-right">Actions</th>
 	            </tr>
 	          </tfoot>
 	          <tbody>
-	          	@foreach ($users as $user)
+	          	@foreach ($categories as $category)
 		            <tr>
-		              <td> {{ $user->id }} </td>
-		              <td> {{ $user->group->title }} </td>
-		              <td> {{ $user->name }} </td>
-		              <td> {{ $user->email }} </td>
-		              <td> {{ $user->phone }} </td>
-		              <td> {{ $user->address }} </td>
+		              <td> {{ $category->id }} </td>
+		              <td> {{ $category->title }} </td>
 		              <td class="text-right">
 		              	
-		              	<form method="POST" action=" {{ route('users.destroy', ['user' => $user->id]) }} ">
-		              		<a class="btn btn-primary btn-sm" href="{{ route('users.show', ['user' => $user->id]) }}"> 
-			              	 	<i class="fa fa-eye"></i> 
-			              	</a>
-			              	<a class="btn btn-primary btn-sm" href="{{ route('users.edit', ['user' => $user->id]) }}"> 
+		              	<form method="POST" action=" {{ route('categories.destroy', ['category' => $category->id]) }} ">
+			              	<a class="btn btn-primary btn-sm" href="{{ route('categories.edit', ['category' => $category->id]) }}"> 
 			              	 	<i class="fa fa-edit"></i> 
 			              	</a>
 		              		@csrf

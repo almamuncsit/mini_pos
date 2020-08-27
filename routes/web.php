@@ -23,18 +23,8 @@ Route::post('groups','UserGroupsController@store');
 Route::delete('groups/{id}','UserGroupsController@destroy');
 
 
-Route::resource('users', 'UsersController', ['except' => ['show'] ]);
+Route::resource('users', 'UsersController' );
 
-// Route::resource('users', 'UsersController', ['only' => ['show', 'destroy'] ]);
-// Route::get('users', 'UsersController@index');
-// Route::get('users/{id}', 'UsersController@show');
-// Route::get('users/create', 'UsersController@create');
-// Route::post('users', 'UsersController@store');
-// Route::get('users/{id}/edit', 'UsersController@edit');
-// Route::put('users/{id}', 'UsersController@update');
-// Route::delete('users/{id}', 'UsersController@destroy');
-
-
-
+Route::resource('categories', 'CategoriesController', ['except' => ['show'] ] );
 
 
