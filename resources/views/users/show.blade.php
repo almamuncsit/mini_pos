@@ -47,11 +47,8 @@
 				     </table>
 	    		</div>
 	    	</div>
-	      
-	      
 
 	    </div>
 	  </div>
-
 
 @stop
