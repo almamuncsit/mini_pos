@@ -12,4 +12,9 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public $data = [];
+
+    public function __construct()
+    {
+    	$this->data['tab_menu'] = '';
+    }
 }
