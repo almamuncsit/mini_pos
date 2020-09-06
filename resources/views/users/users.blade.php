@@ -45,7 +45,7 @@
 	          	@foreach ($users as $user)
 		            <tr>
 		              <td> {{ $user->id }} </td>
-		              <td> {{ $user->group->title }} </td>
+		              <td> {{ optional($user->group)->title }} </td>
 		              <td> {{ $user->name }} </td>
 		              <td> {{ $user->email }} </td>
 		              <td> {{ $user->phone }} </td>

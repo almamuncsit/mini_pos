@@ -37,16 +37,18 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('users/{id}/sales', 		'UserSalesController@index')->name('user.sales');
 	Route::get('users/{id}/purchases', 	'UserPurchasesController@index')->name('user.purchases');
 	
-	Route::get('users/{id}/payments', 	'UserPaymentsController@index')->name('user.payments');
-	Route::post('users/{id}/payments', 	'UserPaymentsController@store')->name('user.payments.store');
+	Route::get('users/{id}/payments', 					'UserPaymentsController@index')->name('user.payments');
+	Route::post('users/{id}/payments', 					'UserPaymentsController@store')->name('user.payments.store');
 	Route::delete('users/{id}/payments/{payment_id}', 	'UserPaymentsController@destroy')->name('user.payments.destroy');
 	
-	Route::get('users/{id}/receipts', 	'UserReceiptsController@index')->name('user.receipts');
+	Route::get('users/{id}/receipts', 				'UserReceiptsController@index')->name('user.receipts');
+	Route::post('users/{id}/receipts', 				'UserReceiptsController@store')->name('user.receipts.store');
+	Route::delete('users/{id}/receipts/{receipt_id}', 'UserReceiptsController@destroy')->name('user.receipts.destroy');
 
 
 
-	Route::resource('categories', 'CategoriesController', ['except' => ['show'] ] );
-	Route::resource('products', 'ProductsController' );
+	Route::resource('categories', 	'CategoriesController', ['except' => ['show'] ] );
+	Route::resource('products', 	'ProductsController' );
 });
 
 
