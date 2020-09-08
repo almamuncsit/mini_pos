@@ -34,7 +34,18 @@ Route::group(['middleware' => 'auth'], function() {
 
 
 	Route::resource('users', 'UsersController' );
-	Route::get('users/{id}/sales', 		'UserSalesController@index')->name('user.sales');
+	
+	Route::get('users/{id}/sales', 								'UserSalesController@index')->name('user.sales');
+
+	Route::post('users/{id}/invoices', 							'UserSalesController@createInvoice')->name('user.sales.store');
+	Route::get('users/{id}/invoices/{invoice_id}', 				'UserSalesController@invoice')->name('user.sales.invoice_details');
+	Route::delete('users/{id}/invoices/{invoice_id}', 			'UserSalesController@destroy')->name('user.sales.destroy');
+
+	Route::post('users/{id}/invoices/{invoice_id}', 			'UserSalesController@addItem')->name('user.sales.invoices.add_item');
+	Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', 'UserSalesController@destroyItem')->name('user.sales.invoices.delete_item');
+
+
+
 	Route::get('users/{id}/purchases', 	'UserPurchasesController@index')->name('user.purchases');
 	
 	Route::get('users/{id}/payments', 					'UserPaymentsController@index')->name('user.payments');

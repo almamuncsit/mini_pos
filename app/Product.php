@@ -14,4 +14,16 @@ class Product extends Model
     	return $this->belongsTo(Category::class);
     }
 
+    /**
+    * Getting array for select option
+    **/
+    public static function arrayForSelect() {
+    	$arr = [];
+    	$products = Product::all();
+        foreach ($products as $product) {
+            $arr[$product->id] = $product->title;
+        } 
+
+        return $arr;
+    }
 }
