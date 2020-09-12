@@ -24,7 +24,9 @@ class InvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'date'          => 'required',
+            'challan_no'    => 'nullable',
+            'note'          => 'nullable'
         ];
     }
 }
