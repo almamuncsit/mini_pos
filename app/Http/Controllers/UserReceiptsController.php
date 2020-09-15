@@ -13,6 +13,7 @@ class UserReceiptsController extends Controller
 {
     public function __construct()
 	{
+        parent::__construct();
 		$this->data['tab_menu'] = 'receipts';
 	}
 

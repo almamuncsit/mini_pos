@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsStockController extends Controller
 {
+	public function __construct()
+    {
+        parent::__construct();
+        $this->data['main_manu']    = 'Products';
+        $this->data['sub_manu']     = 'Stocks';
+    }
+
     public function index()
     {
     	$this->data['products'] = Product::all();

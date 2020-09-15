@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Session;
 
 class CategoriesController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->data['main_manu']    = 'Products';
+        $this->data['sub_manu']     = 'Categories';
+    }
+
     /**
      * Display a listing of the resource.
      *

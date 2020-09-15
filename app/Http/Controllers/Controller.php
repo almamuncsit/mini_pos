@@ -15,6 +15,8 @@ class Controller extends BaseController
 
     public function __construct()
     {
+    	$this->data['main_manu'] = 'Users';
+    	$this->data['sub_manu'] = 'Users';
     	$this->data['tab_menu'] = '';
     }
 }

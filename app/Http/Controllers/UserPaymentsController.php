@@ -13,6 +13,7 @@ class UserPaymentsController extends Controller
 {
     public function __construct()
 	{
+        parent::__construct();
 		$this->data['tab_menu'] = 'payments';
 	}
     /**

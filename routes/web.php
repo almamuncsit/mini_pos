@@ -68,6 +68,13 @@ Route::group(['middleware' => 'auth'], function() {
 	
 	Route::resource('products', 	'ProductsController' );
 	Route::get('stocks', 			'ProductsStockController@index')->name('stocks');
+	
+	Route::get('reposts/sales', 		'Reports\SaleReportController@index')->name('reports.sales');
+	Route::get('reposts/purchases', 	'Reports\PurchaseReportController@index')->name('reports.purchases');
+
+	Route::get('reposts/payments', 	'Reports\PaymentReportController@index')->name('reports.payments');
+	Route::get('reposts/receipts', 	'Reports\ReceiptReportController@index')->name('reports.receipts');
+
 });
 
 

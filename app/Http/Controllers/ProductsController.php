@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Session;
 
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->data['main_manu']    = 'Products';
+        $this->data['sub_manu']     = 'Products';
+    }
+
     /**
      * Display a listing of the resource.
      *
