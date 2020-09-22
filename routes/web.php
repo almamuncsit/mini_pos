@@ -20,9 +20,8 @@ Route::post('login', 'Auth\LoginController@authenticate')->name('login.confirm')
 
 Route::group(['middleware' => 'auth'], function() {
 	
-	Route::get('dashboard', function () {
-	    return view('welcome');
-	});
+	Route::get('/', 'DashboardController@index');
+	Route::get('dashboard', 'DashboardController@index');
 
 	Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
