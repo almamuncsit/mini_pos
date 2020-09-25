@@ -106,6 +106,7 @@ class ProductsController extends Controller
         $product->description   = $data['description'];
         $product->cost_price    = $data['cost_price'];
         $product->price         = $data['price'];
+        $product->has_stock     = $data['has_stock'];
 
         if( $product->save() ) {
             Session::flash('message', 'Product Updated Successfully');

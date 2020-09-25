@@ -17,7 +17,7 @@ class ProductsStockController extends Controller
 
     public function index()
     {
-    	$this->data['products'] = Product::all();
+    	$this->data['products'] = Product::where('has_stock', 1)->get();
 
     	return view('products.stocks', $this->data);
     }

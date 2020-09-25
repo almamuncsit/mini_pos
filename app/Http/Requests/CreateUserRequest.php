@@ -24,10 +24,10 @@ class CreateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'group_id' => 'required',
-            'name' => 'required|string',
-            'phone' => 'required|numeric|unique:users',
-            'email' => 'nullable|email|unique:users',
+            'group_id'  => 'required',
+            'name'      => 'required|string',
+            'phone'     => 'nullable|numeric|unique:users',
+            'email'     => 'nullable|email|unique:users',
         ];
     }
 }
