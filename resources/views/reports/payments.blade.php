@@ -34,7 +34,7 @@
 	    </div>
 	    <div class="card-body">
 	      <div class="table-responsive">
-	        <table class="table table-striped table-borderless" cellspacing="0">
+	        <table class="table table-striped table-borderless table-sm" cellspacing="0">
 	          <thead>
 	            <tr>
 	            	<th>Date</th>

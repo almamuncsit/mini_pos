@@ -72,6 +72,7 @@
         </a>
         <div id="collapseReport" class="collapse  @if($main_manu == 'Reports') show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item @if($sub_manu == 'Days') active @endif" href="{{ route('reports.days') }}"> Day Reports </a>
             <a class="collapse-item @if($sub_manu == 'Sales') active @endif" href="{{ route('reports.sales') }}">Sales</a>
             <a class="collapse-item @if($sub_manu == 'Purchases') active @endif" href="{{ route('reports.purchases') }}">Purchases</a>
             <a class="collapse-item @if($sub_manu == 'Payments') active @endif" href="{{ route('reports.payments') }}">Payments</a>
