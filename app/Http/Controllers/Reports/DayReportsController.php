@@ -29,7 +29,7 @@ class DayReportsController extends Controller
 								    	->join('sale_invoices', 'sale_items.sale_invoice_id', '=', 'sale_invoices.id')
 								    	->whereBetween('sale_invoices.date', [ $this->data['start_date'], $this->data['end_date'] ])
 								    	->where('products.has_stock', 1)
-								    	->groupBy('products.id')
+								    	->groupBy(['products.id', 'products.title'])
 								    	->get();
 
 		$this->data['purchases'] = PurchaseItem::select( 'products.title', DB::raw( 'SUM(purchase_items.quantity) as quantity, AVG(purchase_items.price) AS price, SUM(purchase_items.total) as total') )
@@ -37,19 +37,19 @@ class DayReportsController extends Controller
                                         ->join('purchase_invoices', 'purchase_items.purchase_invoice_id', '=', 'purchase_invoices.id')
                                         ->whereBetween('purchase_invoices.date', [ $this->data['start_date'], $this->data['end_date'] ])
                                         ->where('products.has_stock', 1)
-                                        ->groupBy('products.id')
+                                        ->groupBy(['products.id', 'products.title'])
                                         ->get();
 
         $this->data['receipts'] = Receipt::select('users.name', 'users.phone', DB::raw('SUM(receipts.amount) as amount') )
         								->join('users', 'receipts.user_id', '=', 'users.id')
         								->whereBetween('date', [ $this->data['start_date'], $this->data['end_date'] ])
-        								->groupBy('user_id')
+        								->groupBy(['user_id', 'users.name', 'users.phone'])
 								    	->get();   
 
         $this->data['payments'] = Payment::select('users.name', 'users.phone', DB::raw('SUM(payments.amount) as amount') )
         								->join('users', 'payments.user_id', '=', 'users.id')
         								->whereBetween('date', [ $this->data['start_date'], $this->data['end_date'] ])
-        								->groupBy('user_id')
+        								->groupBy(['user_id', 'users.name', 'users.phone'])
 								    	->get();                                
 
     	return view('reports.days', $this->data);

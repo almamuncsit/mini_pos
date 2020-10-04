@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('users/{id}/receipts/{invoice_id?}', 	'UserReceiptsController@store')->name('user.receipts.store');
 	Route::delete('users/{id}/receipts/{receipt_id}', 	'UserReceiptsController@destroy')->name('user.receipts.destroy');
 
+	Route::get('users/{id}/reports', 					'UserReportsController@reports')->name('user.reports');
 
 
 	Route::resource('categories', 	'CategoriesController', ['except' => ['show'] ] );

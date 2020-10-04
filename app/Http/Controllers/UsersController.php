@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Group;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\SaleItem;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
