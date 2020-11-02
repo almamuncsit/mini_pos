@@ -30,7 +30,7 @@
 	<!-- DataTales Example -->
 	  <div class="card shadow mb-4">
 	    <div class="card-header py-3">
-	      <h6 class="m-0 font-weight-bold text-primary">Sales Report From <strong>{{ $start_date }}</strong> to <strong>{{ $end_date }}</strong> </h6>
+	      <h6 class="m-0 font-weight-bold">Sales Report <br/> <strong>{{ $start_date }}</strong> - <strong>{{ $end_date }}</strong> </h6>
 	    </div>
 	    <div class="card-body">
 	      <div class="table-responsive">
@@ -39,8 +39,8 @@
 	            <tr>
 	            	<th>Date</th>
 	              	<th>Products</th>
-	              	<th class="text-right">Quantity</th>
-	              	<th class="text-right">Price</th>
+	              	<th class="text-right d-none d-sm-table-cell">Quantity</th>
+	              	<th class="text-right d-none d-sm-table-cell">Price</th>
 	              	<th class="text-right">Total</th>
 	            </tr>
 	          </thead>
@@ -50,8 +50,8 @@
 		            <tr>
 		            	<td> {{ $sale->date }} </td>
 			            <td> {{ $sale->title }} </td>
-			            <td class="text-right"> {{ $sale->quantity }} </td>
-			            <td class="text-right"> {{ $sale->price }} </td>
+			            <td class="text-right d-none d-sm-table-cell"> {{ $sale->quantity }} </td>
+			            <td class="text-right d-none d-sm-table-cell"> {{ $sale->price }} </td>
 			            <td class="text-right"> {{ $sale->total }} </td>
 		            </tr>
 	            @endforeach
@@ -60,8 +60,8 @@
 	          <tfoot>
 	            <tr>
 	            	<th></th>
-	              	<th class="text-right">Ttoal Items:</th>
-	              	<th class="text-right"> {{ $sales->sum('quantity') }} </th>
+	              	<th class="text-right d-none d-sm-table-cell">Ttoal Items:</th>
+	              	<th class="text-right d-none d-sm-table-cell"> {{ $sales->sum('quantity') }} </th>
 	              	<th class="text-right">Total:</th>
 	              	<th class="text-right"> {{ $sales->sum('total') }} </th>
 	            </tr>

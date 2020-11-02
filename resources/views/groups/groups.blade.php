@@ -19,7 +19,7 @@
 	    </div>
 	    <div class="card-body">
 	      <div class="table-responsive">
-	        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	        <table class="table table-borderless table-striped table-sm" id="dataTable" width="100%" cellspacing="0">
 	          <thead>
 	            <tr>
 	              <th>ID</th>
@@ -43,7 +43,7 @@
 		              	<form method="POST" action=" {{ url('groups/' . $group->id) }} ">
 		              		@csrf
 		              		@method('DELETE')
-		              		<button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i> Delete  </button>	
+		              		<button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i> </button>	
 		              	</form>
 		              </td>
 		            </tr>

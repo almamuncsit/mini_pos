@@ -3,11 +3,11 @@
 @section('main_content')
 
 	<div class="row clearfix page_header">
-		<div class="col-md-6">
-			<h2> Categories </h2>		
+		<div class="col-6">
+			<h3> Categories </h3>		
 		</div>
-		<div class="col-md-6 text-right">
-			<a class="btn btn-info" href="{{ route('categories.create') }}"> <i class="fa fa-plus"></i> New Category </a>
+		<div class="col-6 text-right">
+			<a class="btn btn-info btn-sm" href="{{ route('categories.create') }}"> <i class="fa fa-plus"></i> New Category </a>
 		</div>
 	</div>
 
@@ -18,7 +18,7 @@
 	    </div>
 	    <div class="card-body">
 	      <div class="table-responsive">
-	        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	        <table class="table table-borderless table-striped table-sm" id="dataTable" width="100%" cellspacing="0">
 	          <thead>
 	            <tr>
 	              <th>ID</th>

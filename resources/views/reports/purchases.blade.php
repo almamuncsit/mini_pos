@@ -39,8 +39,8 @@
 	            <tr>
 	            	<th>Date</th>
 	              	<th>Products</th>
-	              	<th class="text-right">Quantity</th>
-	              	<th class="text-right">Price</th>
+	              	<th class="text-right d-none d-sm-table-cell">Quantity</th>
+	              	<th class="text-right d-none d-sm-table-cell">Price</th>
 	              	<th class="text-right">Total</th>
 	            </tr>
 	          </thead>
@@ -50,8 +50,8 @@
 		            <tr>
 		            	<td> {{ $purchase->date }} </td>
 			            <td> {{ $purchase->title }} </td>
-			            <td class="text-right"> {{ $purchase->quantity }} </td>
-			            <td class="text-right"> {{ $purchase->price }} </td>
+			            <td class="text-right d-none d-sm-table-cell"> {{ $purchase->quantity }} </td>
+			            <td class="text-right d-none d-sm-table-cell"> {{ $purchase->price }} </td>
 			            <td class="text-right"> {{ $purchase->total }} </td>
 		            </tr>
 	            @endforeach
@@ -60,8 +60,8 @@
 	          <tfoot>
 	            <tr>
 	            	<th></th>
-	              	<th class="text-right">Ttoal Items:</th>
-	              	<th class="text-right"> {{ $purchases->sum('quantity') }} </th>
+	              	<th class="text-right d-none d-sm-table-cell">Ttoal Items:</th>
+	              	<th class="text-right d-none d-sm-table-cell"> {{ $purchases->sum('quantity') }} </th>
 	              	<th class="text-right">Total:</th>
 	              	<th class="text-right"> {{ $purchases->sum('total') }} </th>
 	            </tr>

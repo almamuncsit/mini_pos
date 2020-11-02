@@ -15,39 +15,39 @@
 	    </div>
 	    <div class="card-body">
 	      <div class="table-responsive">
-	        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	        <table class="table table-borderless table-striped table-sm" id="dataTable" width="100%" cellspacing="0">
 	          <thead>
 	            <tr>
-	              <th>ID</th>
-	              <th>Category</th>
+	              <th class="d-none d-sm-table-cell">ID</th>
+	              <th class="d-none d-sm-table-cell">Category</th>
 	              <th>Title</th>
-	              <th>Purchases</th>
-	              <th>Sales</th>
-	              <th>Stock</th>
+	              <th class="d-none d-sm-table-cell">Purchases</th>
+	              <th class="d-none d-sm-table-cell">Sales</th>
+	              <th class="text-right">Stock</th>
 	            </tr>
 	          </thead>
 	          
 	          <tbody>
 	          	@foreach ($products as $product)
 		            <tr>
-		              <td> {{ $product->id }} </td>
-		              <td> {{ $product->category->title }} </td>
+		              <td class="d-none d-sm-table-cell"> {{ $product->id }} </td>
+		              <td class="d-none d-sm-table-cell"> {{ $product->category->title }} </td>
 		              <td> {{ $product->title }} </td>
-		              <td> {{ $purchase = $product->purchaseItems()->sum('quantity') }} </td>
-		              <td> {{ $sale = $product->saleItems()->sum('quantity') }} </td>
-		              <td> {{  $purchase - $sale }} </td>
+		              <td class="d-none d-sm-table-cell"> {{ $purchase = $product->purchaseItems()->sum('quantity') }} </td>
+		              <td class="d-none d-sm-table-cell"> {{ $sale = $product->saleItems()->sum('quantity') }} </td>
+		              <td class="text-right"> {{  $purchase - $sale }} </td>
 		            </tr>
 	            @endforeach
 	          </tbody>
 
 	          <tfoot>
 	            <tr>
-	              <th>ID</th>
-	              <th>Category</th>
+	              <th class="d-none d-sm-table-cell">ID</th>
+	              <th class="d-none d-sm-table-cell">Category</th>
 	              <th>Title</th>
-	              <th>Purchases</th>
-	              <th>Sales</th>
-	              <th>Stock</th>
+	              <th class="d-none d-sm-table-cell">Purchases</th>
+	              <th class="d-none d-sm-table-cell">Sales</th>
+	              <th class="text-right">Stock</th>
 	            </tr>
 	          </tfoot>
 
