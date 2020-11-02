@@ -18,9 +18,17 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
-        $this->data['users'] = User::all();
+        $group_id = $request->get('group');
+        if ($group_id) {
+            $this->data['users']    = User::where('group_id', $group_id)->get();
+        } else {
+            $this->data['users']    = User::all();    
+        }
+        
+
+        $this->data['groups']   = Group::all();
 
         return view('users.users', $this->data);
     }

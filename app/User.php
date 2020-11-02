@@ -3,6 +3,8 @@
 namespace App;
 
 use App\PurchaseInvoice;
+use App\PurchaseItem;
+use App\SaleItem;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
@@ -19,12 +21,23 @@ class User extends Model
     	return $this->hasMany(SaleInvoice::class);
     }
 
+    // Sales Items of a User
+    public function saleItems() 
+    {
+        return $this->hasManyThrough(SaleItem::class, SaleInvoice::class);
+    }
+
 
     public function purchases()
     {
     	return $this->hasMany(PurchaseInvoice::class);
     }
 
+    // Sales Items of a User
+    public function purchaseItems() 
+    {
+        return $this->hasManyThrough(PurchaseItem::class, PurchaseInvoice::class);
+    }
 
     public function payments()
     {

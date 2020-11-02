@@ -10,15 +10,15 @@
 	    
 	    <div class="card-body">
 	    	<div class="table-responsive">
-		        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+		        <table class="table table-striped table-sm" id="dataTable" width="100%" cellspacing="0">
 		          <thead>
 		            <tr>
-		              <th>Challen No</th>
-		              <th>Customer</th>
+		              <th class="d-none d-sm-table-cell">Challen No</th>
+		              <th class="d-none d-sm-table-cell">Customer</th>
 		              <th>Date</th>
-		              <th>Items</th>
-		              <th>Total</th>
-		              <th class="text-right">Actions</th>
+		              <th class="d-none d-sm-table-cell">Qty</th>
+		              <th class="text-right">Total</th>
+		              <th class="text-right">-</th>
 		            </tr>
 		          </thead>
 		          
@@ -29,21 +29,21 @@
 		          	?>
 		          	@foreach ($user->sales as $sale)
 			            <tr>
-			              <td> {{ $sale->challan_no }} </td>
-			              <td> {{ $user->name }} </td>
+			              <td class="d-none d-sm-table-cell"> {{ $sale->challan_no }} </td>
+			              <td class="d-none d-sm-table-cell"> {{ $user->name }} </td>
 			              <td> {{ $sale->date }} </td>
-			              <td> 
+			              <td class="d-none d-sm-table-cell"> 
 			              	<?php 
 			              		$itemQty = $sale->items()->sum('quantity');
 			              		$totalItem += $itemQty;
 			              		echo $itemQty;
 			              	 ?>
 			              </td>
-			              <td> 
+			              <td class="text-right"> 
 			              	<?php 
 			              		$total = $sale->items()->sum('total');
 			              		$grandTotal += $total;
-			              		echo $total;
+			              		echo number_format($total, 2);
 			              	 ?>
 			              </td>
 			              <td class="text-right">
@@ -66,12 +66,12 @@
 
 		          <tfoot>
 		            <tr>
-		              <th>Challen No</th>
-		              <th>Customer</th>
+		              <th class="d-none d-sm-table-cell">Challen No</th>
+		              <th class="d-none d-sm-table-cell">Customer</th>
 		              <th>Date</th>
-		              <th> {{ $totalItem }} </th>
-		              <th> {{ $grandTotal }} </th>
-		              <th class="text-right">Actions</th>
+		              <th class="d-none d-sm-table-cell"> {{ $totalItem }} </th>
+		              <th class="text-right"> {{ number_format($grandTotal, 2) }} </th>
+		              <th class="text-right">-</th>
 		            </tr>
 		          </tfoot>
 

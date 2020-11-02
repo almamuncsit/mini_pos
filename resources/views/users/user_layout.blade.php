@@ -6,27 +6,27 @@
 
 
 	<div class="row clearfix page_header">
-		<div class="col-md-4">
-			<a class="btn btn-info" href="{{ route('users.index') }}"> <i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
-		</div>	
-		<div class="col-md-8 text-right">
-			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#newSale">
-			  <i class="fa fa-plus"></i> New Sale
+		{{-- <div class="col-md-4">
+			<a class="btn btn-info btn-sm" href="{{ route('users.index') }}"> <i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
+		</div> --}}	
+		<div class="col-md-12 text-right">
+			<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newSale">
+			  <i class="fa fa-plus"></i> Sale
 			</button>
 
-			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#newPayment">
-			  <i class="fa fa-plus"></i> New Payment
+			<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newPayment">
+			  <i class="fa fa-plus"></i> Payment
 			</button>
 
-			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#newPurchase">
-			  <i class="fa fa-plus"></i> New Purchase
+			<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newPurchase">
+			  <i class="fa fa-plus"></i> Purchase
 			</button>
 	
-			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#newReceipt">
-			  <i class="fa fa-plus"></i> New Receipt
+			<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newReceipt">
+			  <i class="fa fa-plus"></i> Receipt
 			</button>
-
 		</div>
+
 	</div>
 
 

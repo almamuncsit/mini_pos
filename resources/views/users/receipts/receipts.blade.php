@@ -20,31 +20,32 @@
 	    
 	    <div class="card-body">
 	    	<div class="table-responsive">
-		        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+		        <table class="table table-striped table-sm" id="dataTable" width="100%" cellspacing="0">
 		          <thead>
 		            <tr>
-		              <th>Admin</th>
+		              <th class="d-none d-sm-table-cell">Admin</th>
 		              <th>Date</th>
 		              <th class="text-right">Total</th>
-		              <th>Note</th>
-		              <th class="text-right">Actions</th>
+		              <th class="d-none d-sm-table-cell">Note</th>
+		              <th class="text-right">-</th>
 		            </tr>
 		          </thead>
 		          <tfoot>
 		            <tr>
-		              <th colspan="2">Total</th>
-		              <th class="text-right"> {{ $user->receipts()->sum('amount') }} </th>
-		              <th></th>
+		              <th class="d-none d-sm-table-cell"></th>
+		              <th>Total:</th>
+		              <th class="text-right"> {{ number_format($user->receipts()->sum('amount'), 2) }} </th>
+		              <th class="d-none d-sm-table-cell"></th>
 		              <th class="text-right"></th>
 		            </tr>
 		          </tfoot>
 		          <tbody>
 		          	@foreach ($user->receipts as $receipt)
 			            <tr>
-			              <td> {{ optional($receipt->admin)->name  }} </td>
+			              <td class="d-none d-sm-table-cell"> {{ optional($receipt->admin)->name  }} </td>
 			              <td> {{ $receipt->date }} </td>
-			              <td class="text-right"> {{ $receipt->amount }} </td>
-			              <td> {{ $receipt->note }} </td>
+			              <td class="text-right"> {{ number_format($receipt->amount, 2) }} </td>
+			              <td class="d-none d-sm-table-cell"> {{ $receipt->note }} </td>
 			              <td class="text-right">
 			              	<form method="POST" action=" {{ route('user.receipts.destroy', ['id' => $user->id, 'receipt_id' => $receipt->id]) }} ">
 			              		@csrf

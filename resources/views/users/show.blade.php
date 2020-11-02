@@ -1,7 +1,6 @@
 @extends('users.user_layout')
 
-
-
+{{-- 
 @section('user_card')
   
     <div class="row">
@@ -144,7 +143,7 @@
     </div>
 
 
-@stop
+@stop --}}
 
 
 

@@ -20,31 +20,32 @@
 	    
 	    <div class="card-body">
 	    	<div class="table-responsive">
-		        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+		        <table class="table table-striped table-sm" id="dataTable" width="100%" cellspacing="0">
 		          <thead>
 		            <tr>
-		              <th>Admin</th>
+		              <th class="d-none d-sm-table-cell">Admin</th>
 		              <th>Date</th>
 		              <th class="text-right">Total</th>
-		              <th>Note</th>
-		              <th class="text-right">Actions</th>
+		              <th class="d-none d-sm-table-cell">Note</th>
+		              <th class="text-right">-</th>
 		            </tr>
 		          </thead>
 		          <tfoot>
 		            <tr>
-		              <th colspan="2" class="text-right">Total : </th>
-		              <th class="text-right"> {{ $user->payments()->sum('amount') }} </th>
-		              <th></th>
+		              <th class="d-none d-sm-table-cell"></th>
+		              <th class="text-right">Total : </th>
+		              <th class="text-right"> {{ number_format($user->payments()->sum('amount'), 2) }} </th>
+		              <th class="d-none d-sm-table-cell"></th>
 		              <th></th>
 		            </tr>
 		          </tfoot>
 		          <tbody>
 		          	@foreach ($user->payments as $payment)
 			            <tr>
-			              <td> {{ optional($payment->admin)->name  }} </td>
+			              <td class="d-none d-sm-table-cell"> {{ optional($payment->admin)->name  }} </td>
 			              <td> {{ $payment->date }} </td>
-			              <td class="text-right"> {{ $payment->amount }} </td>
-			              <td> {{ $payment->note }} </td>
+			              <td class="text-right"> {{ number_format($payment->amount, 2) }} </td>
+			              <td class="d-none d-sm-table-cell"> {{ $payment->note }} </td>
 			              <td class="text-right">
 			              	<form method="POST" action=" {{ route('user.payments.destroy', ['id' => $user->id, 'payment_id' => $payment->id]) }} ">
 			              		@csrf
