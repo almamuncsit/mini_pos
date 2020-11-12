@@ -1,5 +1,5 @@
 <div class="row clearfix">
-	<div class="col-md-2">
+	<div class="col-sm-6 col-md-2">
 		<div class="nav flex-column nav-pills d-none d-md-block">
 		  <a class="nav-link @if($tab_menu == 'user_info') active @endif " href=" {{ route('users.show', $user->id) }} ">User Info</a>
 		  <a class="nav-link @if($tab_menu == 'reports') active @endif "  href="{{ route('user.reports', $user->id) }}">Reports</a>
